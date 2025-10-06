@@ -1,5 +1,5 @@
 import pytest
-from proj import Dice
+from proj.dice import Dice
 
 def test_roll_returns_int():
     dice = Dice()
