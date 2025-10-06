@@ -6,3 +6,7 @@ test:
 coverage:
 	PYTHONPATH=. coverage run -m pytest
 	PYTHONPATH=. coverage report -m
+
+# RUN WITH:
+# make test
+# make coverage
