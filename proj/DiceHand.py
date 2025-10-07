@@ -1,4 +1,4 @@
-import Dice
+import dice
 # This class handles the rolls of the dice.
 # It has three methods:
 #   roll_all()
@@ -10,7 +10,7 @@ import Dice
 
 class DiceHand:
     def __init__(self, num_dice=1, num_sides=6):
-        self.dice = [Dice(num_sides) for i in range(num_dice)]
+        self.dice = [dice(num_sides) for i in range(num_dice)]
         self.last_roll = []
     
     def roll_all(self):
