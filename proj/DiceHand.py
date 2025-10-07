@@ -5,7 +5,7 @@ from .dice import Dice
 #       - rolls all dice and stores the result
 #   get_total()
 #       - sum of rolls
-#   __str__()
+#   __str__() 
 #       - string for printing results formatting
 
 class DiceHand:
