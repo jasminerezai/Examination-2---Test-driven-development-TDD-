@@ -1,3 +1,14 @@
 .venv/
+<<<<<<< HEAD
 __pycache__/
 .pytest_cache/
+=======
+.coverage
+__pycache__
+htmlcov/
+*.pyc
+dice/doc
+guess/doc
+build/
+coverage.xml
+>>>>>>> c5d9e3b663cfff4021906cf087d01261233f268d
