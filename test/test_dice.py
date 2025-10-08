@@ -27,11 +27,6 @@ class Test_Dice_Roll(unittest.TestCase):
         self.assertIsInstance(res, exp)
 
     def test_roll_dice(self):
-<<<<<<< HEAD
-
-=======
-        """Test roll dice"""
->>>>>>> 0818b2ee3669dbc7b1eef887133d40318c8fdc52
         dice = Dice()
         res = dice.roll()
         exp = 1 <= res <= 6
