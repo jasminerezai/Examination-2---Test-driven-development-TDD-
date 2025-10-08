@@ -1,4 +1,3 @@
-import pytest
 import random
 from src.intelligence import Intelligence
 
