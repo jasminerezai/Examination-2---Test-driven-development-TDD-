@@ -8,7 +8,6 @@ test:
 
 coverage:
 	PYTHONPATH=. python -m coverage run -m pytest
-	PYTHONPATH=. python -m coverage report -m
 
 flake8:
 	flake8 proj test
