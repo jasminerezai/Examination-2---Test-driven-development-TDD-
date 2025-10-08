@@ -1,4 +1,5 @@
 import pytest
+import unittest
 from src.dice import Dice
 
 # def test_roll_returns_int():
@@ -18,22 +19,14 @@ from src.dice import Dice
 #         result = dice.roll()
 #         assert 1 <= result <= 20, "Roll should be within the custom number of sides"
 
-
-import unittest
-
-from src.dice import Dice
-
-
 class Test_Dice_Roll(unittest.TestCase):
 
     def test_init_default_object(self):
-        """Instantiate an object and check its properties"""
         res = Dice()
         exp = Dice
         self.assertIsInstance(res, exp)
 
     def test_roll_dice(self):
-        """Test roll dice"""
         dice = Dice()
         res = dice.roll()
         exp = 1 <= res <= 6

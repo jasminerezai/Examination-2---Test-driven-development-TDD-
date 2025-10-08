@@ -5,10 +5,20 @@ import random
 # The method then rolls the dice and it will result in a number beteween 1-6.
 # The number gets returned.
 
+# class Dice:
+#     def __init__(self, num_sides=6):
+#         self.num_sides = num_sides
+
+#     def roll(self):
+#         return random.randint(1, self.num_sides)
+
+
 
 class Dice:
-    def __init__(self, num_sides=6):
-        self.num_sides = num_sides
+
+    def __init__(self):
+           random.seed()
 
     def roll(self):
-        return random.randint(1, self.num_sides)
+        
+        return random.randint(1, 6)
