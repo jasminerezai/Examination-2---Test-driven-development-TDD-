@@ -1,11 +1,12 @@
-import src.dice
+from src.dice import Dice
+
 # This class handles the rolls of the dice.
 # It has three methods:
 #   roll_all()
 #       - rolls all dice and stores the result
 #   get_total()
 #       - sum of rolls
-#   __str__()
+#   __str__() 
 #       - string for printing results formatting
 
 class DiceHand:
