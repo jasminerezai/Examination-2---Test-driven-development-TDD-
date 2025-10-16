@@ -1,13 +1,10 @@
-"""
-Intelligence class for computer player in Pig Dice Game. 
-Supports two difficulty levels, easy and hard.
-
-"""
-import pytest 
-import random 
+import random
 
 class Intelligence:
-    def __init__(self, difficulty = 'easy'):
+    """Computer player AI for Pig Dice Game (easy or hard difficulty)."""
+
+    def __init__(self, difficulty='easy'):
+        """Initialize computer player with difficulty ('easy' or 'hard')."""
         difficulty = difficulty.lower()
         if difficulty not in ['easy', 'hard']:
             raise ValueError('Difficulty must be "easy" or "hard".')
@@ -16,22 +13,23 @@ class Intelligence:
         self.difficulty = difficulty.lower()
 
     def add_points(self, points):
+        """Add points to the computer's score."""
         self.score += points
 
     def reset_score(self):
+        """Reset the computer's score to zero."""
         self.score = 0
 
     def should_hold(self, turn_total, opponent_score):
-        """Return True if the computer player decides to hold, otherwise False. """
+        """Decide whether to hold based on difficulty and scores."""
         if self.difficulty == 'easy':
-            return turn_total >=10 or random.random() <0.1 #10% chance to randomly hold
-        
+            return turn_total >= 10 or random.random() < 0.1
         elif self.difficulty == 'hard':
             if self.score + turn_total >= 100:
-                return True # win condition
+                return True
             elif self.score < opponent_score and turn_total >= 15:
-                return True # take a moderate risk if behind
+                return True
             elif turn_total >= 20:
-                return True # holds after building up a good turn total
+                return True
             else: 
                 return False
