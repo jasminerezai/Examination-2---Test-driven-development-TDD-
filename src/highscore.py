@@ -2,6 +2,7 @@
 import json
 import os
 
+width = 53
 class HighScore:
     FILE_PATH = "highscores.json"
 
@@ -21,17 +22,26 @@ class HighScore:
         return max(self.scores, key=lambda x: x["score"])
 
     def display_all(self):
-        """Display all scores, and highlight the highest."""
-        if not self.scores:
-            print("No scores yet!")
-            return
+        highest = max(self.scores, key=lambda x: x["score"]) if self.scores else None
+        width = self.game.width if hasattr(self, "game") else 53  # fallback
 
-        highest = self.get_highest()
-        print("\n🏆 All-time Scores 🏆")
-        for entry in sorted(self.scores, key=lambda x: x["score"], reverse=True):
-            marker = " <- Highest!" if entry == highest else ""
-            print(f"{entry['name']}: {entry['score']}{marker}")
-        print()
+        print("\n╔" + "═" * (width - 2) + "╗")
+        print("║" + " " * (width - 2) + "║")
+        print("║" + "🏆 All-time Scores 🏆".center(width - 4) + "║")
+        print("║" + " " * (width - 2) + "║")
+
+        # print each score line nicely centered
+        if self.scores:
+            for entry in sorted(self.scores, key=lambda x: x["score"], reverse=True):
+                line = f"{entry['name']}: {entry['score']}"
+                if highest and entry == highest:
+                    line += "  <- Highest!"
+                print("║" + line.center(width - 2) + "║")
+        else:
+            print("║" + "No scores yet!".center(width - 2) + "║")
+
+        print("║" + " " * (width - 2) + "║")
+        print("╚" + "═" * (width - 2) + "╝")
     
     def save(self):
         """Save scores to a file."""
