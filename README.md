@@ -14,7 +14,7 @@ The player who first scores **100 or more points** wins.
 
 ### 📖 Game Rules
 
-- The objective is to be the first player to reach **100 points**.  
+- The objective is to be the first player to reach **100 points** (or 10, in cheating mode is activated).
 - On each turn, the player rolls a six-sided die.  
 - If the player rolls a **1**, their turn ends and they receive **no points**.  
 - If the player rolls any other number, they can choose to **roll again** or **hold** to keep their current round score.  
