@@ -84,7 +84,7 @@ python -m src.main
 ## Testing
 Start the Unittests:
 ```bash
-make coverage 
+make test 
 ```
 
 Start Flake8:

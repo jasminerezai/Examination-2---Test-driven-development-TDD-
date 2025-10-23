@@ -6,9 +6,6 @@ install:
 test:
 	pytest -v
 
-coverage:
-	PYTHONPATH=. python -m coverage run -m pytest
-
 flake8:
 	flake8 src/
 
