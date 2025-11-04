@@ -3,6 +3,8 @@
 install:
 	python -m pip install -r requirements.txt
 
+run:
+	python -m src.main
 test:
 	python -m pytest -v
 
